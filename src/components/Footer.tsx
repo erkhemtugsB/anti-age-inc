@@ -13,9 +13,11 @@ const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">
-            <h4 className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">
-              AGS Anti Age INC
-            </h4>
+              <img
+                src="logo.png"
+                alt="AGS Anti Age INC Logo"
+                className="h-10 w-auto"
+              />
             <p className="text-gray-400">
               Premium Japanese NMN supplements for cellular health and anti-aging support.
             </p>
