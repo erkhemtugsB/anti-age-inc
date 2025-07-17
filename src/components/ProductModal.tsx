@@ -113,7 +113,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 <ShoppingBag className="w-8 h-8 text-pink-400" />
               </div>
             </div>
-          
+          </div>
+
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-white">{product.name}</h3>
             <p className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">
@@ -138,7 +139,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               <div className="grid sm:grid-cols-2 gap-4 text-sm">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <benefit.icon className={`w-4 h-4 ${benefit.color}`} />
+                    {React.createElement(benefit.icon, { className: `w-4 h-4 ${benefit.color}` })}
                     <span className="text-gray-300">{benefit.label}</span>
                   </div>
                 ))}
