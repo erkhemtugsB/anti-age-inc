@@ -21,11 +21,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <div className="text-center">
-            <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2">
-              <ShoppingBag className="w-8 h-8 text-white" />
             </div>
-            <span className="text-white font-semibold">{product.category.toUpperCase()}</span>
-          </div>
         </div>
       </div>
       
