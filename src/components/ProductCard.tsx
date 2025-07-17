@@ -13,12 +13,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
       onClick={() => onClick(product)}
       className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 overflow-hidden hover:border-pink-500/50 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-pink-500/10"
     >
-      <div className={`h-48 ${product.image} flex items-center justify-center`}>
-        <div className="text-center">
-          <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2">
-            <ShoppingBag className="w-8 h-8 text-white" />
+      <div className="h-48 relative overflow-hidden">
+        <img 
+          src={product.image[0]} 
+          alt={product.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+        />
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-2">
+              <ShoppingBag className="w-8 h-8 text-white" />
+            </div>
+            <span className="text-white font-semibold">{product.category.toUpperCase()}</span>
           </div>
-          <span className="text-white font-semibold">{product.category.toUpperCase()}</span>
         </div>
       </div>
       

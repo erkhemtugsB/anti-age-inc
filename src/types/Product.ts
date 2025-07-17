@@ -4,7 +4,7 @@ export interface Product {
   price: number;
   description: string;
   features: string[];
-  image: string;
+  image: string[];
   category: 'black' | 'pink';
   size: 'small' | 'large';
 }

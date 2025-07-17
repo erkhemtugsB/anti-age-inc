@@ -8,11 +8,16 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.pexels.com/photos/539694/pexels-photo-539694.jpeg" 
+          alt="Premium supplements background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-transparent to-pink-900/30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(236,72,153,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(251,191,36,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(236,72,153,0.03)_50%,transparent_52%)] bg-[length:20px_20px]"></div>
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

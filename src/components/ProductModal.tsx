@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ShoppingBag, Zap, Brain, Heart, Shield } from 'lucide-react';
+import { X, ShoppingBag, Zap, Brain, Heart, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Product } from '../types/Product';
 
 interface ProductModalProps {
@@ -9,7 +9,21 @@ interface ProductModalProps {
 }
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose }) => {
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [product]);
+
   if (!isOpen || !product) return null;
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % product.image.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + product.image.length) % product.image.length);
+  };
 
   const benefits = [
     { icon: Zap, label: "Enhanced Energy", color: "text-yellow-400" },
@@ -34,14 +48,71 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
         </button>
         
         <div className="p-8 space-y-6">
-          <div className={`h-64 ${product.image} rounded-xl flex items-center justify-center mb-6`}>
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3">
-                <ShoppingBag className="w-10 h-10 text-white" />
-              </div>
-              <span className="text-white font-bold text-lg">{product.category.toUpperCase()}</span>
+          <div className="relative h-64 rounded-xl overflow-hidden mb-6">
+            <img 
+              src={product.image[currentImageIndex]} 
+              alt={`${product.name} - Image ${currentImageIndex + 1}`}
+              className="w-full h-full object-cover"
+            />
+            
+            {product.image.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors duration-200"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors duration-200"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+                
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {product.image.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                        index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+            
+            <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+              <span className="text-white font-semibold text-sm">{product.category.toUpperCase()}</span>
             </div>
           </div>
+          
+          <div className="flex space-x-2 overflow-x-auto pb-2">
+            {product.image.map((img, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-colors duration-200 ${
+                  index === currentImageIndex ? 'border-pink-500' : 'border-gray-600'
+                }`}
+              >
+                <img 
+                  src={img} 
+                  alt={`${product.name} thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+          
+          <div className="space-y-4">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-pink-500/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-3">
+                <ShoppingBag className="w-8 h-8 text-pink-400" />
+              </div>
+            </div>
           
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-white">{product.name}</h3>
