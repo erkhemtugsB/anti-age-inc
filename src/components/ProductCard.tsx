@@ -16,11 +16,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
         <img 
           src={product.image[0]} 
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 bg-white"
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <div className="text-center">
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent">
         </div>
       </div>
       

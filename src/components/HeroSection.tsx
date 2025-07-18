@@ -11,7 +11,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.pexels.com/photos/539694/pexels-photo-539694.jpeg" 
+          src="/hero-background.webp" 
           alt="Premium supplements background"
           className="w-full h-full object-cover"
         />

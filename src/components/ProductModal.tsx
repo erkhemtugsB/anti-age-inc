@@ -52,7 +52,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
             <img 
               src={product.image[currentImageIndex]} 
               alt={`${product.name} - Image ${currentImageIndex + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain bg-white"
             />
             
             {product.image.length > 1 && (
@@ -101,7 +101,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 <img 
                   src={img} 
                   alt={`${product.name} thumbnail ${index + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-white"
                 />
               </button>
             ))}
