@@ -58,21 +58,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
               <div className="flex items-center justify-center space-x-4">
                 <div className="transform rotate-12 hover:rotate-6 transition-transform duration-300">
                   <img 
-                    src="/public/black.jpeg" 
+                    src="/public/black.png" 
                     alt="Active NMN Black" 
                     className="w-48 h-64 object-contain drop-shadow-2xl"
                   />
                 </div>
                 <div className="transform -rotate-6 hover:rotate-0 transition-transform duration-300 z-10">
                   <img 
-                    src="/public/pink.jpeg" 
+                    src="/public/pink.png" 
                     alt="Active NMN Pink" 
                     className="w-52 h-68 object-contain drop-shadow-2xl"
                   />
                 </div>
                 <div className="transform rotate-6 hover:rotate-12 transition-transform duration-300">
                   <img 
-                    src="/public/black.jpeg" 
+                    src="/public/black.png" 
                     alt="Active NMN Black Large" 
                     className="w-48 h-64 object-contain drop-shadow-2xl"
                   />
