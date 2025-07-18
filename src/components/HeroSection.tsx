@@ -11,7 +11,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <img 
-          src="hero-background.webp" 
+          src="/hero-background.webp" 
           alt="Premium supplements background"
           className="w-full h-full object-cover"
         />
@@ -19,11 +19,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
       </div>
       
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-3xl mx-auto text-center">
-        <div className="space-y-8">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pb-20 flex items-end">
+        <div className="max-w-2xl">
+          <div className="space-y-6">
           <div className="space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-left">
               <span className="text-white drop-shadow-lg">
                 Reclaim Your
               </span>
@@ -36,13 +36,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
                 Today
               </span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-lg sm:text-xl text-gray-200 max-w-lg leading-relaxed drop-shadow-md text-left">
               Premium Japanese Active NMN supplements designed to boost NAD+ levels, 
               enhance cellular energy, and support your anti-aging journey.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
             <button
               onClick={onShopNowClick}
               className="group bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-pink-500/25 flex items-center space-x-2"
@@ -64,7 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
             </div>
           </div>
         </div>
-        </div>
+          </div>
       </div>
 
       {/* Subtle floating elements */}
