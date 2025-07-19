@@ -33,7 +33,14 @@ const Navigation: React.FC<NavigationProps> = ({
             <span>Email: agsantiage@gmail.com</span>
           </div>
           <div className="flex items-center space-x-2">
-            <Facebook className="w-4 h-4 hover:text-gray-700 cursor-pointer transition-colors duration-200" />
+            <a
+              href="https://www.facebook.com/profile.php?id=61577353568888&mibextid=wwXIfr&rdid=vJLMQ05zPWeaCius&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19BNox863U%2F%3Fmibextid%3DwwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-4 h-4 hover:text-gray-700 cursor-pointer transition-colors duration-200" />
+            </a>
           </div>
         </div>
       </div>
