@@ -44,7 +44,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
                 className="group bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center"
                 onClick={() => window.open('https://en.vitalcell.jp/', '_blank')}
               >
-                <span>Supplier</span>
+                <span>VitalCell.jp</span>
               </button>
             </div>
           </div>
