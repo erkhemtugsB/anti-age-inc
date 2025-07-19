@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Brain, Heart } from 'lucide-react';
+import { Zap, Brain, Heart, Award } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const benefits = [
@@ -26,30 +26,54 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-12">
+        <div className="space-y-12">
           <div className="space-y-4">
-            <h3 className="text-4xl font-bold text-gray-900">
+            <h3 className="text-4xl font-bold text-gray-900 text-center">
               What is Active NMN?
             </h3>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed text-center">
               Active NMN (Nicotinamide Mononucleotide) is a highly bioavailable form of NMN that helps boost NAD+ levels in the body. 
               NAD+ is essential for cellular energy production, mitochondrial function, and anti-aging mechanisms.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div 
-                key={index}
-                className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-pink-500/30 hover:shadow-lg transition-all duration-300"
-              >
-                <div className={`flex items-center justify-center w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded-full mb-6 mx-auto`}>
-                  <benefit.icon className="w-8 h-8 text-white" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Benefits tiles */}
+            <div className="space-y-6">
+              {benefits.map((benefit, index) => (
+                <div 
+                  key={index}
+                  className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-pink-500/30 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center space-x-4">
+                    <div className={`flex items-center justify-center w-12 h-12 bg-gradient-to-br ${benefit.gradient} rounded-full flex-shrink-0`}>
+                      <benefit.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">{benefit.title}</h4>
+                      <p className="text-gray-600 text-sm">{benefit.description}</p>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">{benefit.title}</h4>
-                <p className="text-gray-600">{benefit.description}</p>
+              ))}
+            </div>
+            
+            {/* Right side - Certificate */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-pink-500/30 hover:shadow-lg transition-all duration-300 max-w-md">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
+                    <Award className="w-5 h-5 text-white" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-900">Product Certificate</h4>
+                </div>
+                <img 
+                  src="/product-certificate.jpg" 
+                  alt="Product Certificate"
+                  className="w-full h-auto rounded-lg border border-gray-200"
+                />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

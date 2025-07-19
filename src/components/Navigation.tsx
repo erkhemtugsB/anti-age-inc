@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Search, ShoppingCart, User, Heart } from 'lucide-react';
+import { Menu, Facebook } from 'lucide-react';
 
 interface NavigationProps {
   scrolled: boolean;
@@ -31,6 +31,9 @@ const Navigation: React.FC<NavigationProps> = ({
             <span>Contact: 310-906-8399</span>
             <span>•</span>
             <span>Email: agsantiage@gmail.com</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Facebook className="w-4 h-4 hover:text-gray-700 cursor-pointer transition-colors duration-200" />
           </div>
         </div>
       </div>
