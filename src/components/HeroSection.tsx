@@ -17,7 +17,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
             <div className="space-y-2">
               <div className="inline-flex items-center space-x-2 bg-yellow-400 text-black rounded-full px-4 py-2">
                 <Zap className="w-4 h-4" />
-                <span className="font-bold text-sm uppercase tracking-wide">Limited Edition</span>
+                <span className="font-bold text-sm uppercase tracking-wide">Boost your energy</span>
               </div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
                 <span className="text-gray-900">
