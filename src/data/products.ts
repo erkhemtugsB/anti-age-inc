@@ -8,9 +8,9 @@ export const products: Product[] = [
     description: "Premium formulation with enhanced bioavailability for optimal NAD+ conversion.",
     features: ["2.59 cal concentration", "Enhanced absorption", "Premium black formulation"],
     image: [
-      "/public/black.jpeg",
-      "/public/black-box.jpeg",
-      "/public/small-black/small-black.jpeg"
+      "/black.jpeg",
+      "/black-box.jpeg",
+      "/small-black/small-black.jpeg"
     ],
     category: 'black',
     size: 'small'
@@ -22,9 +22,9 @@ export const products: Product[] = [
     description: "Maximum strength formulation for advanced anti-aging support and cellular energy.",
     features: ["4.28 cal concentration", "Maximum potency", "Advanced bioactivity"],
     image: [
-      "/public/black.jpeg",
-      "/public/black-box.jpeg",
-      "/public/big-black/big-black.jpeg"
+      "/black.jpeg",
+      "/black-box.jpeg",
+      "/big-black/big-black.jpeg"
     ],
     category: 'black',
     size: 'large'
@@ -36,9 +36,9 @@ export const products: Product[] = [
     description: "Gentle yet effective formulation perfect for daily wellness and vitality support.",
     features: ["Gentle formulation", "Daily wellness support", "Optimal bioavailability"],
     image: [
-      "/public/pink.jpeg",
-      "/public/pink-box.jpeg",
-      "/public/small-pink/small-pink.jpeg"
+      "/pink.jpeg",
+      "/pink-box.jpeg",
+      "/small-pink/small-pink.jpeg"
     ],
     category: 'pink',
     size: 'small'
@@ -50,9 +50,9 @@ export const products: Product[] = [
     description: "Enhanced formulation for comprehensive anti-aging and energy support.",
     features: ["Large size format", "Extended supply", "Enhanced potency"],
     image: [
-      "/public/pink.jpeg",
-      "/public/pink-box.jpeg",
-      "/public/big-pink/big-pink.jpeg"
+      "/pink.jpeg",
+      "/pink-box.jpeg",
+      "/big-pink/big-pink.jpeg"
     ],
     category: 'pink',
     size: 'large'
