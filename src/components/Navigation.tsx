@@ -32,11 +32,6 @@ const Navigation: React.FC<NavigationProps> = ({
             <span>•</span>
             <span>Email: agsantiage@gmail.com</span>
           </div>
-          <div className="flex items-center space-x-4">
-            <span>English</span>
-            <span>•</span>
-            <span>USD</span>
-          </div>
         </div>
       </div>
       
