@@ -10,7 +10,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
   return (
     <div
       onClick={() => onClick(product)}
-      className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 overflow-hidden hover:border-pink-500/50 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-pink-500/10"
+      className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-pink-500/50 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-pink-500/10"
     >
       <div className="h-48 relative overflow-hidden">
         <img 
@@ -23,15 +23,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) => {
       </div>
       
       <div className="p-6 space-y-4">
-        <h4 className="text-lg font-semibold text-white group-hover:text-pink-400 transition-colors duration-200">
+        <h4 className="text-lg font-semibold text-gray-900 group-hover:text-pink-500 transition-colors duration-200">
           {product.name}
         </h4>
-        <p className="text-gray-400 text-sm leading-relaxed">{product.description}</p>
+        <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
         <div className="flex justify-between items-center">
           <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">
             ${product.price}
           </span>
-          <button className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full text-sm transition-colors duration-200">
+          <button className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white px-4 py-2 rounded-full text-sm transition-all duration-200">
             View Details
           </button>
         </div>

@@ -9,13 +9,13 @@ interface ProductsSectionProps {
 
 const ProductsSection: React.FC<ProductsSectionProps> = ({ products, onProductClick }) => {
   return (
-    <section id="products" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section id="products" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
-          <h3 className="text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          <h3 className="text-4xl font-bold text-gray-900">
             Our Premium Products
           </h3>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Choose from our carefully formulated Active NMN supplements, each designed for optimal bioavailability and effectiveness.
           </p>
         </div>

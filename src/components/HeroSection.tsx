@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, Zap } from 'lucide-react';
 
 interface HeroSectionProps {
   onShopNowClick: () => void;
@@ -7,43 +7,36 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <section id="home" className="relative min-h-screen overflow-hidden bg-white">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/hero-background.webp)'
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-      </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-2">
-              <div className="inline-block bg-yellow-400 text-black rounded-full px-4 py-2">
+              <div className="inline-flex items-center space-x-2 bg-yellow-400 text-black rounded-full px-4 py-2">
+                <Zap className="w-4 h-4" />
                 <span className="font-bold text-sm uppercase tracking-wide">Limited Edition</span>
               </div>
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black leading-tight">
-                <span className="text-yellow-400">
-                  ELEVATE
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight">
+                <span className="text-gray-900">
+                  PREMIUM
                 </span>
                 <br />
-                <span className="text-white">
-                  YOUR GAINS
+                <span className="bg-gradient-to-r from-yellow-400 to-pink-500 bg-clip-text text-transparent">
+                  ACTIVE NMN
                 </span>
               </h1>
-              <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
-                Premium Japanese Active NMN supplements designed for bodybuilders
+              <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
+                Active NMN (Nicotinamide Mononucleotide) is a highly bioavailable form of NMN that helps boost NAD+ levels in the body. NAD+ is essential for cellular energy production, mitochondrial function, and anti-aging mechanisms.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={onShopNowClick}
-                className="group bg-white text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
+                className="group bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center space-x-2"
               >
                 <span>Shop Now</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -80,10 +73,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
               </div>
               
               {/* Floating elements */}
-              <div className="absolute -top-4 -left-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold animate-pulse">
+              <div className="absolute -top-4 -left-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold animate-bounce">
                 NEW
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center space-x-1">
+              <div className="absolute -bottom-4 -right-4 bg-pink-500 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center space-x-1">
                 <Star className="w-4 h-4 fill-current" />
                 <span>4.9</span>
               </div>

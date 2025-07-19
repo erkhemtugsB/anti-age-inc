@@ -17,7 +17,7 @@ function App() {
   const { selectedProduct, isModalOpen, openModal, closeModal } = useModal();
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white">
       <Navigation 
         scrolled={scrolled}
         isMobileMenuOpen={isMobileMenuOpen}

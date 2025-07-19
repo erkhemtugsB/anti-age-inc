@@ -9,15 +9,15 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-black border-t border-gray-800 py-12">
+    <footer id="contact" className="bg-gray-900 border-t border-gray-700 py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4">
-              <img
-                src="logo.png"
-                alt="AGS Anti Age INC Logo"
-                className="h-10 w-auto"
-              />
+            <img
+              src="/logo.png"
+              alt="AGS Anti Age INC Logo"
+              className="h-10 w-auto"
+            />
             <p className="text-gray-400">
               Premium Japanese NMN supplements for cellular health and anti-aging support.
             </p>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+        <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-400">© 2025 AGS Anti Age INC. All rights reserved.</p>
         </div>
       </div>

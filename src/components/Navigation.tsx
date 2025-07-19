@@ -28,9 +28,9 @@ const Navigation: React.FC<NavigationProps> = ({
       <div className="bg-green-400 text-black text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <span>Contact: (555) 123-4567</span>
+            <span>Contact: 310-906-8399</span>
             <span>•</span>
-            <span>Email: info@agsantiage.com</span>
+            <span>Email: agsantiage@gmail.com</span>
           </div>
           <div className="flex items-center space-x-4">
             <span>English</span>
@@ -44,15 +44,17 @@ const Navigation: React.FC<NavigationProps> = ({
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <div className="text-2xl font-bold text-gray-900">
-                nutreko
-              </div>
+              <img
+                src="/logo.png"
+                alt="AGS Anti Age INC Logo"
+                className="h-10 w-auto"
+              />
             </div>
           </div>
 
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
-              {navItems.map((item) => (
+              {navItems.filter(item => !['#blog', '#pages'].includes(item.href)).map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -62,24 +64,6 @@ const Navigation: React.FC<NavigationProps> = ({
                 </a>
               ))}
             </div>
-          </div>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200">
-              <Search className="h-5 w-5" />
-            </button>
-            <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200">
-              <Heart className="h-5 w-5" />
-            </button>
-            <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200">
-              <User className="h-5 w-5" />
-            </button>
-            <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200 relative">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                0
-              </span>
-            </button>
           </div>
 
           <div className="md:hidden">
@@ -97,7 +81,7 @@ const Navigation: React.FC<NavigationProps> = ({
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/98 backdrop-blur-lg border-t border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
+            {navItems.filter(item => !['#blog', '#pages'].includes(item.href)).map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -107,23 +91,6 @@ const Navigation: React.FC<NavigationProps> = ({
                 {item.label}
               </a>
             ))}
-            <div className="flex items-center space-x-4 px-3 py-2 border-t border-gray-200 mt-2 pt-4">
-              <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200">
-                <Search className="h-5 w-5" />
-              </button>
-              <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200">
-                <Heart className="h-5 w-5" />
-              </button>
-              <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200">
-                <User className="h-5 w-5" />
-              </button>
-              <button className="text-gray-700 hover:text-pink-500 transition-colors duration-200 relative">
-                <ShoppingCart className="h-5 w-5" />
-                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                  0
-                </span>
-              </button>
-            </div>
           </div>
         </div>
       )}
