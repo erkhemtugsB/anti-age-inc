@@ -142,7 +142,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               Buy Now - ${product.price}
             </button>
           </div>
+          </div>
         </div>
+      </div>
       </div>
     </div>
   );
