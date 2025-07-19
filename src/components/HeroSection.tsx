@@ -40,7 +40,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onShopNowClick }) => {
                 <span>Shop Now</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
-              <button className="group bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center">
+              <button
+                className="group bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                onClick={() => window.open('https://en.vitalcell.jp/', '_blank')}
+              >
                 <span>Supplier</span>
               </button>
             </div>
