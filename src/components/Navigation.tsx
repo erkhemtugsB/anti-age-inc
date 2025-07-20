@@ -41,8 +41,6 @@ const Navigation: React.FC<NavigationProps> = ({
             >
               <Facebook className="w-4 h-4 hover:text-gray-700 cursor-pointer transition-colors duration-200" />
             </a>
-                          <div className="elfsight-app-8ce8c631-338a-4efb-93e3-ba758077c622" data-elfsight-app-lazy></div>
-
           </div>
         </div>
       </div>
