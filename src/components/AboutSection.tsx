@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, Brain, Heart, Award } from 'lucide-react';
+import Carousel from './Carousel';
 
 const AboutSection: React.FC = () => {
   const benefits = [
@@ -73,6 +74,11 @@ const AboutSection: React.FC = () => {
                   className="w-full h-auto rounded-lg border border-gray-200"
                 />
               </div>
+            </div>
+            
+            {/* Carousel Section */}
+            <div className="mt-8">
+              <Carousel />
             </div>
           </div>
         </div>
