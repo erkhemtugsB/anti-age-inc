@@ -13,27 +13,27 @@ const Carousel: React.FC = () => {
   const carouselItems: CarouselItem[] = [
     {
       id: 1,
-      image: "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/carousel1.jpg",
       bgColor: "bg-gradient-to-br from-cyan-200 to-cyan-300"
     },
     {
       id: 2,
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/carousel2.jpg",
       bgColor: "bg-gradient-to-br from-pink-200 to-pink-300"
     },
     {
       id: 3,
-      image: "https://images.pexels.com/photos/3825527/pexels-photo-3825527.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/carousel3.jpg",
       bgColor: "bg-gradient-to-br from-yellow-200 to-yellow-300"
     },
     {
       id: 4,
-      image: "https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/carousel4.jpg",
       bgColor: "bg-gradient-to-br from-blue-200 to-blue-300"
     },
     {
       id: 5,
-      image: "https://images.pexels.com/photos/3825539/pexels-photo-3825539.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/carousel5.jpg",
       bgColor: "bg-gradient-to-br from-purple-200 to-purple-300"
     }
   ];
@@ -53,9 +53,6 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between mb-6">
-        <h4 className="text-2xl font-bold text-gray-900">Gallery</h4>
-      </div>
 
       <div className="relative overflow-hidden group">
         {/* Navigation Arrows - Centered */}
