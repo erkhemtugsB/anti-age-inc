@@ -43,7 +43,7 @@ const Carousel: React.FC = () => {
   // Create extended array for infinite loop effect
   const extendedItems = [...carouselItems, ...carouselItems, ...carouselItems];
   const itemsToShow = 3;
-  const startIndex = carouselItems.length + currentIndex;
+  const centerIndex = carouselItems.length + currentIndex;
 
   return (
     <div className="w-full">
@@ -64,13 +64,13 @@ const Carousel: React.FC = () => {
 
         <div 
           className="flex transition-transform duration-300 ease-in-out"
-          style={{ transform: `translateX(-${startIndex * (100 / itemsToShow)}%)` }}
+          style={{ transform: `translateX(-${centerIndex * (100 / itemsToShow)}%)` }}
         >
           {extendedItems.map((item, index) => (
             <div key={`${item.id}-${index}`} className="w-1/3 flex-shrink-0 px-2">
               <div 
                 className={`overflow-hidden cursor-pointer rounded-xl transition-all duration-300 ${
-                  index === startIndex 
+                  index === centerIndex + 1
                     ? 'h-64 shadow-2xl transform scale-105 z-10 relative' 
                     : 'h-48 opacity-60 hover:opacity-80'
                 }`}
@@ -78,7 +78,8 @@ const Carousel: React.FC = () => {
                 <img
                   src={item.image}
                   alt="Gallery image"
-                  className="w-full h-full object-cover transition-transform duration-300"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -88,13 +89,14 @@ const Carousel: React.FC = () => {
 
       {/* Mobile version - horizontal scroll */}
       <div className="md:hidden mt-6">
-        <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
+        <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
           {carouselItems.map((item) => (
-            <div key={item.id} className="w-64 flex-shrink-0 h-48 rounded-xl overflow-hidden">
+            <div key={item.id} className="w-64 flex-shrink-0 h-48 rounded-xl overflow-hidden snap-center">
                 <img
                   src={item.image}
                   alt="Gallery image"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
             </div>
           ))}
