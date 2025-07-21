@@ -75,11 +75,6 @@ const AboutSection: React.FC = () => {
                 />
               </div>
             </div>
-            
-            {/* Carousel Section */}
-            <div className="mt-8">
-              <Carousel />
-            </div>
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ import { useScrollEffect } from './hooks/useScrollEffect';
 import { useModal } from './hooks/useModal';
 import { scrollToProducts } from './utils/navigation';
 import { products } from './data/products';
+import Carousel from './components/Carousel';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,23 +19,24 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation 
+      <Navigation
         scrolled={scrolled}
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
       <HeroSection onShopNowClick={scrollToProducts} />
-      
+
       <AboutSection />
-      
-      <ProductsSection 
+      {/* Carousel Section */}
+        <Carousel />
+      <ProductsSection
         products={products}
         onProductClick={openModal}
       />
-      
+
       <UsageSection />
-      
+
       <Footer />
 
       <ProductModal
