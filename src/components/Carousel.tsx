@@ -47,7 +47,6 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="w-full">
-
       <div className="relative overflow-hidden group">
         {/* Navigation Arrows - Centered */}
         <button
@@ -68,12 +67,18 @@ const Carousel: React.FC = () => {
           style={{ transform: `translateX(-${startIndex * (100 / itemsToShow)}%)` }}
         >
           {extendedItems.map((item, index) => (
-            <div key={`${item.id}-${index}`} className="w-1/3 flex-shrink-0">
-              <div className="overflow-hidden cursor-pointer h-48">
+            <div key={`${item.id}-${index}`} className="w-1/3 flex-shrink-0 px-2">
+              <div 
+                className={`overflow-hidden cursor-pointer rounded-xl transition-all duration-300 ${
+                  index === startIndex 
+                    ? 'h-64 shadow-2xl transform scale-105 z-10 relative' 
+                    : 'h-48 opacity-60 hover:opacity-80'
+                }`}
+              >
                 <img
                   src={item.image}
                   alt="Gallery image"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover transition-transform duration-300"
                 />
               </div>
             </div>
@@ -85,14 +90,12 @@ const Carousel: React.FC = () => {
       <div className="md:hidden mt-6">
         <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
           {carouselItems.map((item) => (
-            <div key={item.id} className="w-64 flex-shrink-0 h-48">
-              <div className="overflow-hidden h-full">
+            <div key={item.id} className="w-64 flex-shrink-0 h-48 rounded-xl overflow-hidden">
                 <img
                   src={item.image}
                   alt="Gallery image"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                 />
-              </div>
             </div>
           ))}
         </div>
