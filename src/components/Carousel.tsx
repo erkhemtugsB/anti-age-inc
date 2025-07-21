@@ -68,12 +68,12 @@ const Carousel: React.FC = () => {
           style={{ transform: `translateX(-${startIndex * (100 / itemsToShow)}%)` }}
         >
           {extendedItems.map((item, index) => (
-            <div key={`${item.id}-${index}`} className="w-1/3 flex-shrink-0 px-2">
-              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-pink-500/30 hover:shadow-lg transition-all duration-300 cursor-pointer h-48">
+            <div key={`${item.id}-${index}`} className="w-1/3 flex-shrink-0">
+              <div className="overflow-hidden cursor-pointer h-48">
                 <img
                   src={item.image}
                   alt="Gallery image"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
@@ -85,12 +85,12 @@ const Carousel: React.FC = () => {
       <div className="md:hidden mt-6">
         <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
           {carouselItems.map((item) => (
-            <div key={item.id} className="w-64 flex-shrink-0">
-              <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-pink-500/30 hover:shadow-lg transition-all duration-300 h-48">
+            <div key={item.id} className="w-64 flex-shrink-0 h-48">
+              <div className="overflow-hidden h-full">
                 <img
                   src={item.image}
                   alt="Gallery image"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
