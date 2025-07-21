@@ -4,7 +4,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 interface CarouselItem {
   id: number;
   image: string;
-  bgColor: string;
 }
 
 const Carousel: React.FC = () => {
@@ -13,28 +12,23 @@ const Carousel: React.FC = () => {
   const carouselItems: CarouselItem[] = [
     {
       id: 1,
-      image: "/carousel1.jpg",
-      bgColor: "bg-gradient-to-br from-cyan-200 to-cyan-300"
+      image: "/carousel1.jpg"
     },
     {
       id: 2,
-      image: "/carousel2.jpg",
-      bgColor: "bg-gradient-to-br from-pink-200 to-pink-300"
+      image: "/carousel2.jpg"
     },
     {
       id: 3,
-      image: "/carousel3.jpg",
-      bgColor: "bg-gradient-to-br from-yellow-200 to-yellow-300"
+      image: "/carousel3.jpg"
     },
     {
       id: 4,
-      image: "/carousel4.jpg",
-      bgColor: "bg-gradient-to-br from-blue-200 to-blue-300"
+      image: "/carousel4.jpg"
     },
     {
       id: 5,
-      image: "/carousel5.jpg",
-      bgColor: "bg-gradient-to-br from-purple-200 to-purple-300"
+      image: "/carousel5.jpg"
     }
   ];
 
@@ -76,15 +70,11 @@ const Carousel: React.FC = () => {
           {extendedItems.map((item, index) => (
             <div key={`${item.id}-${index}`} className="w-1/3 flex-shrink-0 px-2">
               <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-pink-500/30 hover:shadow-lg transition-all duration-300 cursor-pointer h-48">
-                <div className={`h-full ${item.bgColor} relative overflow-hidden`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src={item.image}
-                      alt="Gallery image"
-                      className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
-                    />
-                  </div>
-                </div>
+                <img
+                  src={item.image}
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}
@@ -97,15 +87,11 @@ const Carousel: React.FC = () => {
           {carouselItems.map((item) => (
             <div key={item.id} className="w-64 flex-shrink-0">
               <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-pink-500/30 hover:shadow-lg transition-all duration-300 h-48">
-                <div className={`h-full ${item.bgColor} relative overflow-hidden`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src={item.image}
-                      alt="Gallery image"
-                      className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
-                    />
-                  </div>
-                </div>
+                <img
+                  src={item.image}
+                  alt="Gallery image"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           ))}
