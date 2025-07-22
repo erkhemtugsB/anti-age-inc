@@ -40,14 +40,9 @@ const Carousel: React.FC = () => {
     setCurrentIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
   };
 
-  // Create extended array for infinite loop effect
-  const extendedItems = [...carouselItems, ...carouselItems, ...carouselItems];
-  const itemsToShow = 3;
-  const centerIndex = carouselItems.length + currentIndex;
-
   return (
     <div className="w-full">
-      <div className="relative overflow-hidden group">
+      <div className="relative group flex justify-center">
         {/* Navigation Arrows - Centered */}
         <button
           onClick={prevSlide}
@@ -62,45 +57,44 @@ const Carousel: React.FC = () => {
           <ChevronRight className="w-6 h-6 text-gray-600" />
         </button>
 
-        <div 
-          className="flex transition-transform duration-300 ease-in-out"
-          style={{ transform: `translateX(-${centerIndex * (100 / itemsToShow)}%)` }}
-        >
-          {extendedItems.map((item, index) => (
-            <div key={`${item.id}-${index}`} className="w-1/3 flex-shrink-0 px-2">
-              <div 
-                className={`overflow-hidden cursor-pointer rounded-xl transition-all duration-300 ${
-                  index === centerIndex + 1
-                    ? 'h-128 shadow-2xl transform scale-105 z-10 relative' 
-                    : 'h-96 opacity-60 hover:opacity-80'
-                }`}
-              >
-                <img
-                  src={item.image}
-                  alt="Gallery image"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          ))}
+        {/* Single center image */}
+        <div className="w-full max-w-2xl">
+          <div className="h-128 overflow-hidden rounded-xl shadow-2xl transition-all duration-300">
+            <img
+              src={carouselItems[currentIndex].image}
+              alt="Gallery image"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
 
       {/* Mobile version - horizontal scroll */}
-      <div className="md:hidden mt-6">
-        <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
-          {carouselItems.map((item) => (
-            <div key={item.id} className="w-128 flex-shrink-0 h-96 rounded-xl overflow-hidden snap-center">
-                <img
-                  src={item.image}
-                  alt="Gallery image"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-            </div>
-          ))}
+      <div className="md:hidden mt-6 flex justify-center">
+        <div className="w-full max-w-sm">
+          <div className="h-96 rounded-xl overflow-hidden shadow-xl">
+            <img
+              src={carouselItems[currentIndex].image}
+              alt="Gallery image"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
+      </div>
+      
+      {/* Dots indicator */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {carouselItems.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+              index === currentIndex ? 'bg-pink-500' : 'bg-gray-300'
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
