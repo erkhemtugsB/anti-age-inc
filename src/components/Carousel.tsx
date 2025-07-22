@@ -71,8 +71,8 @@ const Carousel: React.FC = () => {
               <div 
                 className={`overflow-hidden cursor-pointer rounded-xl transition-all duration-300 ${
                   index === centerIndex + 1
-                    ? 'h-64 shadow-2xl transform scale-105 z-10 relative' 
-                    : 'h-48 opacity-60 hover:opacity-80'
+                    ? 'h-128 shadow-2xl transform scale-105 z-10 relative' 
+                    : 'h-96 opacity-60 hover:opacity-80'
                 }`}
               >
                 <img
@@ -91,7 +91,7 @@ const Carousel: React.FC = () => {
       <div className="md:hidden mt-6">
         <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
           {carouselItems.map((item) => (
-            <div key={item.id} className="w-64 flex-shrink-0 h-48 rounded-xl overflow-hidden snap-center">
+            <div key={item.id} className="w-128 flex-shrink-0 h-96 rounded-xl overflow-hidden snap-center">
                 <img
                   src={item.image}
                   alt="Gallery image"
