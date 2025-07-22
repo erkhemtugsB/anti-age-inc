@@ -46,24 +46,24 @@ const Carousel: React.FC = () => {
         {/* Navigation Arrows - Centered */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-white/90 hover:bg-white shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/90 hover:bg-white shadow-lg transition-opacity duration-200 opacity-0 group-hover:opacity-100"
         >
           <ChevronLeft className="w-6 h-6 text-gray-600" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 rounded-full bg-white/90 hover:bg-white shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 p-3 rounded-full bg-white/90 hover:bg-white shadow-lg transition-opacity duration-200 opacity-0 group-hover:opacity-100"
         >
           <ChevronRight className="w-6 h-6 text-gray-600" />
         </button>
 
         {/* Single center image */}
-        <div className="w-full max-w-2xl">
-          <div className="h-128 overflow-hidden rounded-xl shadow-2xl transition-all duration-300">
+        <div className="w-full max-w-2xl h-128 flex items-center justify-center">
+          <div className="max-w-full max-h-full overflow-hidden rounded-xl shadow-2xl">
             <img
               src={carouselItems[currentIndex].image}
               alt="Gallery image"
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-h-128 object-contain"
               loading="lazy"
             />
           </div>
@@ -72,12 +72,12 @@ const Carousel: React.FC = () => {
 
       {/* Mobile version - horizontal scroll */}
       <div className="md:hidden mt-6 flex justify-center">
-        <div className="w-full max-w-sm">
-          <div className="h-96 rounded-xl overflow-hidden shadow-xl">
+        <div className="w-full max-w-sm h-96 flex items-center justify-center">
+          <div className="max-w-full max-h-full rounded-xl overflow-hidden shadow-xl">
             <img
               src={carouselItems[currentIndex].image}
               alt="Gallery image"
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-h-96 object-contain"
               loading="lazy"
             />
           </div>
